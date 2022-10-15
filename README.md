@@ -3,8 +3,7 @@
 
 # Pre-requisites: NA
 
-
-#Configurations in fluentbit.yaml
+# Configurations in fluentbit.yaml
 #In Path below, mention path of container logs from desired pods(only) that need to be indexed.
 #For indexing every container  log, set Path as  "/var/log/containers/*.log". This is an hard disk expensive setting.
 ```
