@@ -1,7 +1,7 @@
 # Elastic, FluentBit, Kibana for auto pushing desired logs to index
 -------------------------------------------------------------------
 
-#Pre-requisites: NA
+# Pre-requisites: NA
 
 
 #Configurations in fluentbit.yaml
@@ -14,7 +14,7 @@
         Path              /var/log/containers/*.log
 ```
 
-#create the namespaces
+# create the namespaces
 ```
 kubectl apply -f ns.yaml
 ```
@@ -23,12 +23,12 @@ kubectl apply -f ns.yaml
  kubectl apply -f elastic-service.yaml
  kubectl apply -f elastic-statefulset.yaml
 ```
-#apply the curator yamls to setup cronjobs for cleanup of elastic indices every '30' days set in "unit_count: 30" at 00:01 Hrs.(both configurable)  
+# apply the curator yamls to setup cronjobs for cleanup of elastic indices every '30' days set in "unit_count: 30" at 00:01 Hrs.(both configurable)  
 ```
  kubectl apply -f es-curator-config.yaml
  kubectl apply -f es-curator.yaml
 ```
-#apply the fluentbit and kibana yamls to deploy the respective pods
+# apply the fluentbit and kibana yamls to deploy the respective pods
 ```
  kubectl apply -f fluentbit.yaml 
  kubectl apply -f kibana.yaml
